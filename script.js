@@ -102,7 +102,7 @@ function searchVideos(query, pageToken = '') {
         .then(data => {
             const resultsList = document.getElementById('results');
             if (!resultsList) return;
-            
+
             if (!pageToken) {
                 resultsList.innerHTML = '';
             }
@@ -142,11 +142,21 @@ function searchVideos(query, pageToken = '') {
 
                 const buttonContainer = document.createElement('div');
                 buttonContainer.className = 'button-container';
+                const qualitySelect = document.createElement('select');
+                const qualities = ['144p', '360p', '720p', '1080p'];
+                qualities.forEach(quality => {
+                    const option = document.createElement('option');
+                    option.value = quality;
+                    option.textContent = quality;
+                    qualitySelect.appendChild(option);
+                });
+
                 const button = document.createElement('button');
                 button.textContent = 'ダウンロード';
                 button.onclick = function () {
+                    const selectedQuality = qualitySelect.value;
                     const videoId = video.id.videoId || video.id;
-                    const downloadUrl = `/download?id=${videoId}`;
+                    const downloadUrl = `/download?id=${videoId}&quality=${selectedQuality}`;
 
                     const progressContainer = document.createElement('div');
                     progressContainer.className = 'progress-container';
@@ -211,6 +221,7 @@ function searchVideos(query, pageToken = '') {
                             console.error('Error:', error);
                         });
                 };
+                buttonContainer.appendChild(qualitySelect);
                 buttonContainer.appendChild(button);
 
                 infoContainer.appendChild(titleContainer);
@@ -245,7 +256,7 @@ function searchVideos(query, pageToken = '') {
 
 // 初回ロード時にランダム動画を表示
 window.addEventListener('load', function () {
-    searchVideos('Help me, ERINNNNNN!!');
+    searchVideos('HelpmeERINNNNNN');
 });
 
 // カスタム動画プレーヤーのコントロール
