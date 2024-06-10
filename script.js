@@ -245,7 +245,7 @@ function searchVideos(query, pageToken = '') {
 
 // 初回ロード時にランダム動画を表示
 window.addEventListener('load', function () {
-    searchVideos('HelpmeERINNNNNN');
+    searchVideos('Help me, ERINNNNNN!!');
 });
 
 // カスタム動画プレーヤーのコントロール
