@@ -73,12 +73,7 @@ function hideAdPopup() {
     }
 }
 
-document.getElementById('skip-ad').addEventListener('click', function () {
-    hideAdPopup();
-    fetch('/unlock').then(() => {
-        alert('制限が解除されました。');
-    });
-});
+
 
 document.querySelector('.ad-popup .close').addEventListener('click', function () {
     hideAdPopup();
