@@ -73,7 +73,12 @@ function hideAdPopup() {
     }
 }
 
-
+document.getElementById('skip-ad').addEventListener('click', function () {
+    hideAdPopup();
+    fetch('/unlock').then(() => {
+        alert('制限が解除されました。');
+    });
+});
 
 document.querySelector('.ad-popup .close').addEventListener('click', function () {
     hideAdPopup();
@@ -251,7 +256,7 @@ function searchVideos(query, pageToken = '') {
 
 // 初回ロード時にランダム動画を表示
 window.addEventListener('load', function () {
-    searchVideos('えーりん曲');
+    searchVideos('HelpmeERINNNNNN');
 });
 
 // カスタム動画プレーヤーのコントロール
