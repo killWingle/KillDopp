@@ -102,7 +102,7 @@ function searchVideos(query, pageToken = '') {
         .then(data => {
             const resultsList = document.getElementById('results');
             if (!resultsList) return;
-            
+
             if (!pageToken) {
                 resultsList.innerHTML = '';
             }
