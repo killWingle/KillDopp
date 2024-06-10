@@ -102,7 +102,7 @@ function searchVideos(query, pageToken = '') {
         .then(data => {
             const resultsList = document.getElementById('results');
             if (!resultsList) return;
-
+            
             if (!pageToken) {
                 resultsList.innerHTML = '';
             }
@@ -256,7 +256,7 @@ function searchVideos(query, pageToken = '') {
 
 // 初回ロード時にランダム動画を表示
 window.addEventListener('load', function () {
-    searchVideos('HelpmeERINNNNNN');
+    searchVideos('人気の動画');
 });
 
 // カスタム動画プレーヤーのコントロール
