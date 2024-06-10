@@ -1,6 +1,29 @@
 /* Reset CSS */
 @import url('reset.css');
+#ad-popup .ad-content {
+    text-align: center;
+}
 
+#ad-popup .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+#ad-popup #skip-ad {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #cc0000;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#ad-popup #skip-ad:disabled {
+    background-color: #aaa;
+}
 /* Main CSS */
 body {
     background-color: #f9f9f9;
