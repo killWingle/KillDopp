@@ -1,40 +1,6 @@
 /* Reset CSS */
 @import url('reset.css');
-#ad-popup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    display: none;
-    z-index: 1000;
-}
-#ad-popup .ad-content {
-    text-align: center;
-}
 
-#ad-popup .close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-}
-
-#ad-popup #skip-ad {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #cc0000;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-#ad-popup #skip-ad:disabled {
-    background-color: #aaa;
-}
 /* Main CSS */
 body {
     background-color: #f9f9f9;
@@ -46,28 +12,36 @@ header {
     background-color: #fff;
     padding: 10px 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-header input[type="text"] {
-    width: 50%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+#search-form {
+    display: flex;
+    width: 60%;
+    max-width: 800px;
 }
 
-header button {
+#search-form input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px 0 0 3px;
+    font-size: 16px;
+}
+
+#search-form button {
     padding: 10px 20px;
     background-color: #cc0000;
     color: #fff;
-    border: none;
-    border-radius: 3px;
+    border: 1px solid #cc0000;
+    border-radius: 0 3px 3px 0;
     cursor: pointer;
+    font-size: 16px;
 }
 
-header button:hover {
+#search-form button:hover {
     background-color: #ff0000;
 }
 
@@ -263,7 +237,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 .video-item img {
-    width: 27%;
+    width: 100%;
+    height: auto;
     border-bottom: 1px solid #ddd;
 }
 
@@ -304,4 +279,24 @@ body::-webkit-scrollbar-thumb {
 
 .video-item button:hover {
     background-color: #ff0000;
+}
+
+.progress-container {
+    margin-top: 10px;
+}
+
+.progress-container p {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #555;
+}
+
+.progress-container progress {
+    width: 100%;
+}
+
+video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
 }
